@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="images/flogo.png" sizes="16x16">
+	
+	<style type="text/css">/*------------Custom ScrollBar--------------*/
+		html {
+	    	overflow-x: hidden;
+	    	font-size: 16px;
+		}
+		body{
+			background-color: #34495e;
+		}
+		/* Let's get this party started */
+		::-webkit-scrollbar {
+		    width: 10px;
+		}
+		 
+		/* Track */
+		::-webkit-scrollbar-track {
+		    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		}
+		 
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		    background: rgba(33,33,33,0.8);
+		    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+		}
+		::-webkit-scrollbar-thumb:window-inactive {
+			background: rgba(255,0,0,0.4); 
+		}
+	</style>
+
+	<link href="https://fonts.googleapis.com/css?family=Courgette|Indie+Flower|Muli|Shadows+Into+Light|Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Aclonica|Baloo+Paaji|Gloria+Hallelujah|Joti+One|Lobster|Love+Ya+Like+A+Sister|Puritan" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Passero+One" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/fontawesome-all.min.css">
+	<!--<link rel="stylesheet" type="text/css" href="custom-assets/css/animate.css">-->
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/hover.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/animations.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/vegas.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/effeckt.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/jquery.fancybox.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/main-custom-made.css">
+	
+	<style type="text/css">
+		#reg-bg{
+			background: #40E0D0;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+	</style>
+
+</head>
+<body id="reg-bg">
+
+	<!-- navbar -->
+	<div class="container-fluid" id="headerdiv">
+		<nav class="navbar navbar-expand-sm navbar-light fixed-top gradient" style="box-shadow: none; border-top: 5px solid white;" id="head">
+			<!--<img src="images/logo.png" class="bg-light" width="60" height="30" alt="">-->
+			<a class="navbar-brand p-1 ml-3 hvr-buzz" href="index.html" style="color: white;"><img src="images/fiesta18_logo.png" class="fiesta18_logo_navbar img-fluid"></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto ml-5">
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#topContainer">Home</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#starContainer">Star Gaze</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#eventgContainer">Events</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#regContainer">Register</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#coordContainer">Coordinators</a>
+			      </li>
+			    </ul>
+			   </div>
+		</nav>
+	</div>
+
+	<!-- Heading ="Register" -->
+	<div class="container-fluid" id="header" style="padding: 0px; border-bottom: 5px solid white; ">
+		<div class="jumbotron text-center gradient" style="border-radius: 0; margin: 0; padding-top: 2rem;">
+		  <h1 class="font-alcon display-2 font-shadow2">Register</h1>
+		</div>
+	</div>
+
+	<!-- Form PHP main Backend -->
+	<div class="container-fluid">
+		<br/>
+		<div class="row mb-4">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<form class="form-horizontal" method="POST" name="rform" action="registerfiesta_code.php">
+					<div class="container custom-card">
+						<div class="row">
+							 <div class="form-group form-group-sm col-sm-12">
+							 	<div class="row">
+									<label for="inputName" class="col-sm-3 col-form-label">Name</label>
+									<div class="col-sm-9">
+										<input class="form-control" type="text" name="uname" placeholder="Enter your name" pattern="[A-z][^0-9]{3,}" title="No digits are allowed"  required>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label for="inputCourse" class="col-form-label col-sm-3">Course</label>
+									<div class="col-sm-9">
+										<input class="form-control" type="text" name="ucourse" placeholder="Enter your course" pattern="[A-z][^0-9]{2,}" title="For eg. BCA" required>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" id="enrol">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+								<label for="inputEnrol" class="col-form-label col-sm-3">Enrolment No</label>
+									<div class="col-sm-9">
+										<input class="form-control" type="text" name="uenrol" placeholder="Enter your enrolment number">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label class="control-label col-sm-3" for="inputCollege">College</label>
+									<div class="col-sm-9">
+										<select class="form-control" id="colg" name="colg" onchange="itemchange(this);" required> 
+											<option value="1">
+												Institute of Information Technology & Management
+											</option>
+											<option value="2">
+												Institute of Innovation in Technology & Management
+											</option>
+											<option value="3">
+												Indraprastha Institute of Technology and Management
+											</option>
+											<option value="4">
+												OTHER
+											</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12" id="ucollege" style="display: none;">
+								<div class="row">
+									<label class="col-form-label col-sm-3" for="inputCollegeOther">College</label>
+									<div class="col-sm-9">
+										<input class="form-control" type="text" id="ucollege" name="ucollege" placeholder="Enter your college name" pattern="[A-z][^0-9]{2,}" title="For eg. IITM" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label class="col-form-label col-sm-3" for="inputMobile">Mobile</label>
+									<div class="col-sm-9">
+										<input class="form-control" type="text" name="umobile" placeholder="Enter your phone number" pattern="[^a-z][0-9]{9}" title="Number shoud be atleast 10 digits & No alphabets are allowed" required>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label class="col-form-label col-sm-3" for="inputEmail">Email</label>
+									<div class="col-sm-9">
+										<input class="form-control" type="email" name="uemail" placeholder="Enter your email id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="For eg. example@website.com" required>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label for="inputRegisterAs" class="col-form-label col-sm-3">Register As</label>
+									<div class="col-sm-9">
+										<label class="radio-inline">
+											<input id="ttype1" type="radio" name="type" value="Single" onclick="itemteamchange(this);" checked="true">Single Player
+										</label>
+										<label class="radio-inline">
+											<input id="ttype2" type="radio" name="type" value="Team" onclick="itemteamchange(this);">Team
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" id="lblteam" style="display: none;">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label for="inputTeam" class="col-form-label col-sm-3">Team Members</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" name="teammembers" rows="3" id="team" placeholder="	Team members name separated by commas"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label for="inputEvents" class="col-form-label col-sm-3">Events</label>
+									<div class="col-sm-5">
+										<select class="form-control" id="9" name="9" onchange="eventchange(this);" style="margin-bottom: 15px;">
+											<option selected disabled hidden>
+												9:00 to 11:30
+											</option>
+											<option value="101" id="101">
+												SOLO & GROUP SINGING
+											</option>
+										    <option value="107" id="107">
+										    	AD MAD
+											</option>
+										    <option value="109" id="109">
+										    	MONO ACTING
+										    </option>
+										    <option value="112" id="112">
+										    	QUIZ
+										    </option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<select class="form-control" id="11" name="11"
+										onchange="eventchange(this);" style="margin-bottom: 15px;">
+											<option selected disabled hidden>
+												11:30 to 12:30
+											</option>
+											<option value="102" id="102">
+												SOLO DANCE
+											</option>
+										    <option value="104" id="104">
+										    	RANGOLI
+											</option>
+										    <option value="107" id="126">
+										    	AD MAD
+										    </option>
+										    <option value="109" id="127">
+										    	MONO ACTING
+										    </option>
+										    <option value="110" id="110">
+										    	COOKING WITHOUT FIRE
+										    </option>
+										    <option value="112" id="128">
+										    	QUIZ
+										    </option>
+										    <option value="114" id="114">
+										    	MURDER INVESTIGATION
+										    </option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<div class="col-sm-3"></div>
+									<div class="col-sm-5">
+										<select class="form-control" id="12" name="12"
+										onchange="eventchange(this);" style="margin-bottom: 15px;" >
+											<option selected disabled hidden>
+												12:30 to 2:00
+											</option>
+											<option value="103" id="103">
+												NACH BAILYE
+											</option>
+										    <option value="106" id="106">
+										    	FACE PAINTING
+											</option>
+										    <option value="105" id="105">
+										    	BEAT BOXING
+										    </option>
+										    <option value="114" id="129">
+										    	MURDER INVESTIGATION
+										    </option>
+										    <option value="116" id="116">
+										    	IPL AUCTION
+										    </option>
+										    <option value="117" id="117">
+										    	PICTIONARY
+										    </option>									    
+										    <option value="113" id="113">
+										    	JAM
+										    </option>									    
+										    <option value="111" id="111">
+										    	NUKKAD NATAK
+										    </option>
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<select class="form-control" id="2" name="2"
+										onchange="eventchange(this);">
+											<option selected disabled hidden>
+												2:00 to 4:00
+											</option>
+											<option value="115" id="115">
+												Mr. & Mrs. FIESTA
+											</option>
+										    <option value="111" id="132">
+										    	NUKKAD NATAK
+											</option>
+										    <option value="119" id="119">
+										    	STREET DANCE
+										    </option>
+										    <option value="114" id="130">
+										    	MURDER INVESTIGATION
+										    </option>
+										    <option value="106" id="131">
+										    	FACE PAINTING
+										    </option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label for="inputPhotography" class="col-form-label col-sm-3">Photography</label>
+									<div class="col-sm-9">
+										<div class="checkbox">
+											<label><input name="photo" type="checkbox" value="125" id="125">Yes/No</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<label for="inputSocialMedia" class="col-form-label col-sm-3">Social Media Coverage of Fiesta 2k18</label>
+									<div class="col-sm-9">
+										<div class="checkbox">
+											<label><input type="checkbox" name="social" value="124">Yes/No</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group form-group-sm col-sm-12">
+								<div class="row">
+									<div class="col-sm-12 text-right">
+										<input type="submit" name="btnSave" value="Register" class="btn btn-success" role="button"/>
+										<input type="reset" name="btnreset" class="btn btn-primary" />
+										<a href="index.html" class="btn btn-danger">Cancel</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid p-2" id="footerdiv" style="background-color: #9b59b6; box-shadow: none; border-top:5px solid white;">
+		<div class="row mt-5">
+			<div class="col-sm-4 text-center p-2" style="border-right: 1px solid #23272B;">
+				<div class="text-center">
+					<img class="img-fluid footer-logo custom-card" src="images/logo.png">
+				</div>
+				<div class="p-3 mt-4">
+					<h1 class="font-shadow font-loveyasis font-weight-bold">GROUP OF INSTITUTIONS</h1>
+					<p class="lead font-shadow font-loveyasis font-weight-bold">© IITM 2018 | DESIGNED BY IITM | SR</p>
+				</div>
+			</div>
+
+			<div class="col-sm-4 text-center p-2" style="border-right: 1px solid #23272B;">
+				
+				<button type="button" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg btn-gradient">FIND US</button><p></p>
+
+				<div class="btn-group-vertical btn-group-lg" id="icons">
+					<button type="button" class="btn btn-warning"><a href="https://twitter.com/iitm_ipu" target="_blank"><i class="fab fa-twitter-square fa-2x twitter" aria-hidden="true"></i></a></button>
+					<button type="button" class="btn btn-warning"><a href="https://www.facebook.com/iitmfiesta/" target="_blank"><i class="fab fa-facebook-square fa-2x facebook" aria-hidden="true"></i></a></button>
+					<button type="button" class="btn btn-warning"><a href="https://www.instagram.com/iitm_fiesta/" target="_blank"><i class="fab fa-instagram fa-2x instagram" aria-hidden="true"></i></a></button>
+					<button type="button" class="btn btn-warning"><a href="https://www.youtube.com/channel/UCRfsFwiKcTStwUIf2vISxCw" target="_blank"><i class="fab fa-youtube fa-2x youtube" aria-hidden="true"></i></a></button>
+				</div>
+				<div class="btn-group-vertical btn-group-lg" id="social-text">
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 10px 16px; margin: 0px;"><a href="https://twitter.com/iitm_ipu" target="_blank" class="text-twitter s-t">Connect on Twitter</a></h5></button>
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 9px 16px; margin: 0px;"><a href="https://www.facebook.com/iitmfiesta/" target="_blank" class="text-facebook s-t">Connect on facebook</a></h5></button>
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 9px 16px; margin: 0px;"><a href="https://www.instagram.com/iitm_fiesta/" target="_blank" class="text-insta s-t">Connect on Instagram</a></h5></button>
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 10px 16px; margin: 0px;"><a href="https://www.youtube.com/channel/UCRfsFwiKcTStwUIf2vISxCw" target="_blank" class="text-youtube s-t">Connect on Youtube</a></h5></button>
+				</div>
+			</div>
+			<div class="col-sm-4 text-center p-2">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.63560302968!2d77.09981131446574!3d28.61070669182058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b5567911807%3A0x996e86fe24144daf!2sIITM+Janakpuri+%7C+Institute+of+Information+Technology+%26+Management!5e0!3m2!1sen!2sin!4v1515425836170" frameborder="0" id="maploca" class="border border-dark rounded img-fluid" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	window.onscroll = function() {addBorderAtNavbar()};
+
+	function addBorderAtNavbar(){
+		if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 )
+		{
+			document.getElementById("head").style.borderBottom = "5px solid white";
+		}
+		else
+		{
+			document.getElementById("head").style.borderBottom = "none";	
+		}
+	}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="bootstrap4/js/popper.min.js"></script>
+
+<script src="bootstrap4/js/bootstrap.min.js"></script>
+
+<script src="bootstrap4/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script src="custom-assets/js/gradient-color.js"></script>
+
+<script src="custom-assets/js/animated_bg.js"></script>
+
+<script src="custom-assets/js/css3-animate-it.js"></script>
+
+<script type="text/javascript">
+
+var mi = 0;
+function itemchange(select)
+{	
+	if(select.value == 4) {			
+		document.getElementById("ucollege").style.display = '';	
+		document.getElementById("ucollege").required = true;
+	}
+	else {
+		document.getElementById("ucollege").style.display = 'none';
+		document.getElementById("ucollege").required = false;
+	}
+}
+
+function itemteamchange(radio)
+{
+	if(document.getElementById("ttype1").checked == true) {
+		document.getElementById("team").style.display = 'none';
+		document.getElementById("lblteam").style.display = 'none';
+		document.getElementById("team").required = '';
+	}
+	else if(document.getElementById("ttype2").checked == true) {
+		document.getElementById("team").style.display = '';
+		document.getElementById("lblteam").style.display = '';
+		document.getElementById("team").required = true;
+	}
+}
+function eventchange(select)
+{	
+	if(select.id == 9)
+	{
+
+		if(select.value == 107) 
+		{
+			document.getElementById("126").disabled = 'true';		
+		}
+		else 
+		{
+			document.getElementById("126").disabled = '';			
+		}	
+
+		if(select.value == 109) 
+		{
+			document.getElementById("127").disabled = 'true';		
+		}
+		else 
+		{
+			document.getElementById("127").disabled = '';
+		}
+		if(select.value == 112)	
+		{
+			document.getElementById("128").disabled ='true';
+		}
+		else
+		{
+			document.getElementById("128").disabled ='';
+		}
+	}	
+
+	if(select.id==11)
+	{
+		if(select.value == 107)	
+		{					
+			document.getElementById("107").disabled = 'true';		
+		} 
+		else 
+		{
+			document.getElementById("107").disabled = '';			
+		}
+
+		if(select.value == 109) 
+		{
+			document.getElementById("109").disabled = 'true';		
+		}
+		else 
+		{
+			document.getElementById("109").disabled = '';			
+		}
+
+		if(select.value == 112) 
+		{
+			document.getElementById("112").disabled = 'true';		
+		}
+		else 
+		{
+			document.getElementById("112").disabled = '';			
+		}
+
+		if(select.value == 114) 
+		{
+			document.getElementById("129").disabled = 'true';		
+			document.getElementById("130").disabled = 'true';
+			mi = 114;		
+		}
+		else 
+		{
+			if(mi==114) 
+			{
+				document.getElementById("129").disabled = '';		
+				document.getElementById("130").disabled = '';	
+				mi=0;
+			}
+		}
+	}
+	if(select.id == 12) 
+	{
+		if(select.value == 106)	
+		{
+			document.getElementById("131").disabled = 'true';					
+		}
+		else 
+		{
+			document.getElementById("131").disabled = '';						
+		}
+		if(select.value == 114)
+		{
+			document.getElementById("130").disabled = 'true';
+			document.getElementById("114").disabled = 'true';
+			mi=129;
+		}
+		else
+		{
+			if(mi==129)
+			{
+				document.getElementById("130").disabled = '';
+				document.getElementById("114").disabled = '';
+				mi=0;
+			}
+		}
+		if(select.value == 111) 
+		{
+			document.getElementById("132").disabled = 'true';					
+		}
+		else 
+		{
+			document.getElementById("132").disabled = '';						
+		}
+	}
+	
+	if(select.id == 2) 
+	{
+		if(select.value == 111)	
+		{
+			document.getElementById("111").disabled = 'true';		
+		}
+		else 
+		{
+			document.getElementById("111").disabled = '';		
+		}
+
+		if(select.value == 106)	
+		{
+			document.getElementById("106").disabled = 'true';					
+		}
+		else 
+		{
+			document.getElementById("106").disabled = '';						
+		}
+		if(select.value == 114)	
+		{
+			document.getElementById("129").disabled = 'true';
+			document.getElementById("114").disabled = 'true';	
+			mi=130;				
+		}
+		else 
+		{
+			if(mi==130)
+			{
+				document.getElementById("129").disabled = '';
+				document.getElementById("114").disabled = '';
+				mi=0;						
+			}
+		}
+	}	
+}
+</script>
+</body>
+</html>

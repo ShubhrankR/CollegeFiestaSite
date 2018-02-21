@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events Detail Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="images/flogo.png" sizes="16x16">
+	<style type="text/css">/*------------Custom ScrollBar--------------*/
+		html {
+    	overflow-x: hidden;
+    	font-size: 16px;
+		}
+		body{
+			background-color: #34495e;
+			position: relative;
+		}
+		/* Let's get this party started */
+		::-webkit-scrollbar {
+		    width: 12px;
+		}
+		 
+		/* Track */
+		::-webkit-scrollbar-track {
+		    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		}
+		 
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		    background: rgba(33,33,33,0.8);
+		    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+		}
+		::-webkit-scrollbar-thumb:window-inactive {
+			background: rgba(255,0,0,0.4); 
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Courgette|Indie+Flower|Muli|Shadows+Into+Light|Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Aclonica|Baloo+Paaji|Gloria+Hallelujah|Joti+One|Lobster|Love+Ya+Like+A+Sister|Puritan" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Passero+One" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/fontawesome-all.min.css">
+	<!--<link rel="stylesheet" type="text/css" href="custom-assets/css/animate.css">-->
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/hover.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/animations.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/vegas.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/effeckt.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/jquery.fancybox.css">
+	<link rel="stylesheet" type="text/css" href="custom-assets/css/main-custom-made.css">
+	
+	<style type="text/css">/*----------going to top anchor button--------*/
+		#topBtn {
+		    display: none; /* Hidden by default */
+		    position: fixed; /* Fixed/sticky position */
+		    bottom: 20px; /* Place the button at the bottom of the page */
+		    right: 30px; /* Place the button 30px from the right */
+		    z-index: 99; /* Make sure it does not overlap */
+		    outline: none; /* Remove outline */
+		    color: #2d3436; /* Text color */
+		    cursor: pointer; /* Add a mouse pointer on hover */
+		    padding: 10px; /* Some padding */
+		    width: 5rem;
+		    background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
+			border:3px solid white;
+			border-radius: 5px;
+			font: normal 1rem/normal "Passero One", Helvetica, sans-serif;
+		}
+		#topBtn:hover{
+			background-color: #555;
+			color: black;
+		}
+	</style>
+
+</head>
+<body style="background-color: #95a5a6; ">
+	
+	<!-- Got to Top button anchor -->
+	<button class="hvr-pulse" id="topBtn" onclick="topFunction()" title="Go to Top">TOP</button>
+	
+	<!-- navbar -->
+	<div class="container-fluid" id="headerdiv">
+		<nav class="navbar navbar-expand-sm navbar-light fixed-top gradient" style="box-shadow: none; border-top: 5px solid white;" id="head">
+			<!--<img src="images/logo.png" class="bg-light" width="60" height="30" alt="">-->
+			<a class="navbar-brand p-1 ml-3 hvr-buzz" href="index.html" style="color: white;"><img src="images/fiesta18_logo.png" class="fiesta18_logo_navbar img-fluid"></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto ml-5">
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#topContainer">Home</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#starContainer">Star Gaze</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#eventgContainer">Events</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#regContainer">Register</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link hvr-bounce-to-top p-3 font-loveyasis font-weight-bold font-shadow2" href="index.html#coordContainer">Coordinators</a>
+			      </li>
+			    </ul>
+			   </div>
+		</nav>
+	</div>
+
+	<!-- Heading ="Events" -->
+	<div class="container-fluid" id="header" style="padding: 0px; border-bottom: 5px solid white; ">
+		<div class="jumbotron text-center gradient" style="border-radius: 0; margin: 0; padding-top: 4rem;">
+		  <h1 class="font-alcon display-2 font-shadow2">Events</h1>
+		  <p class="lead font-shadow font-baloo">Rules and Regulations for the events</p>
+		</div>
+	</div>
+
+	<!-- Events details -->
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-ad-mad" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="ad-mad">AD MAD</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Ad_Mad.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="AD MAD / DAY - 25th Feb / Timing : 10AM - 12PM / Venue : IITM ROOM NO. 104">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Ad_Mad.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Mr. Virender Dahiya (IITM)</p>
+						<p class="lead">ii) Dr. Mohita Mathur (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Maximum number of participants allowed are 5.</li>
+							<li class="">Participants are requested to bring their own digital camera or DSLR’s. Photography done by mobile phone is not allowed.
+							Photography done by mobile phone is not allowed.</li>
+							<li class="">Participants will be responsible for their camera. Institute will not take any responsibility for the same.</li>
+							<li class="">Theme: Moments of the fest (Fiesta).</li>
+							<li class="">Participants have to cover each and every event on both the days of the fest.</li>
+							<li class="">Participants have to submit their best 50 photos in a CD (2 copies) on (SO-SO DATE) at the reception of the institute.</li>
+							<li class="">Judgement will be done on the basis of originality, technical excellence and the artistic merit.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-beat-boxing" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="beat-boxing">BEAT BOXING</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Beat Boxing.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="BEAT BOXING / DAY - 25th Feb / Timing : 1PM - 2.30PM / Venue : IITM ATRIUM">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Beat Boxing.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Mr. Pankaj (IITM)</p>
+						<p class="lead">ii) Ms. Annu Aggarwal (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">All sounds are caused by the approved human organs (No claps and tapping of feet allowed).</li>
+							<li class="">Time limit: 1+1 minutes.</li>
+							<li class="">1 microphone will be provided on stage.</li>
+							<li class="">Negative marking will be done if time limit exceeds.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-face-painting" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="face-paint">FACE PAINTING</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/face.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="FACE PAINTING / DAY - 25th Feb / Timing : 1.30PM - 3.30PM / Venue : ROOM NO. 12">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/face.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Mr. Rohit (IITM)</p>
+						<p class="lead">ii) Ms. Kanu Raheja (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">1 artist and 1 model permitted.</li>
+							<li class="">Time limit- 2 hours.</li>
+							<li class="">Models may not paint themselves.</li>
+							<li class="">The competition is strictly brush and sponge only.</li>
+							<li class="">The artist must work alone. No assistance permitted.</li>
+							<li class="">Participants have to bring their own model and materials.</li>
+							<li class="">Participants have to bring their own model and materials.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-nach-baliye" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="nach-baliye">NACH BALIYE</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/FINAL(POTR).jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="NACH BALIYE / DAY - 25th Feb / Timing : _ / Venue : IITM">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/FINAL(POTR).jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Savita (IITM)</p>
+						<p class="lead">ii) Ms. Sushma Malik (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Two participants per team(1 boy/ 1 girl).</li>
+							<li class="">Time limit : 3+2 minutes.</li>
+							<li class="">Judges decision will be final.</li>
+							<li class="">Props, dresses, stationery, special equipments etc will not be provided. Participants are requested to bring their own props.</li>
+							<li class="">Late entries will not be allowed.</li>
+							<li class="">Negative marking will be done if time limit is exceeded.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-group-dance" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="group-dance">GROUP DANCE</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/GDFINAL-01.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="GROUP DANCE / DAY - 26th Feb / Timing : _ / Venue : TALKATORA STADIUM">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/GDFINAL-01.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Leena Chopra (IITM)</p>
+						<p class="lead">ii) Ms. Bharti (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">All the accompanists and participants must be of same college. No outsiders allowed.</li>
+							<li class="">Only one team per college will be allowed to participate.</li>
+							<li class="">Time limit: 6+2 minutes. Negative marks for exceeding time limit.</li>
+							<li class="">Number of participants: minimum 2 maximum 14.</li>
+							<li class="">The teams should carry an official letter from their respective institute signed by the competent authority mentioning the names of the participants.</li>
+							<li class="">Props may be used only with prior permission of the event head coordinator.</li>
+							<li class="">Each team participating in the event should have their song/music in a pen drive and at least 2 CDs of the same.</li>
+							<li class="">Participants are advised to reach the venue for respective events 1 hour prior to the commencement of the event for sound check.</li>
+							<li class="">Participants are advised not to choose indecent songs or costumes for the performance otherwise they may be disqualified from the event.</li>
+							<li class="">Judgment will be based on coordination, quality of songs (music), synchronization, energy level, costumes, makeup, expressions and overall effects.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-group-singing" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="group-singing">GROUP SINGING</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/GSEDIT-01.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="GROUP SINGING / DAY - 25th Feb / Timing : 9AM ONWARDS / Venue : IITM AUDI">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/GSEDIT-01.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Nidhi Ahuja (IITM)</p>
+						<p class="lead">ii) Ms. Neeti Chopra (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Number of participants can be 2-6(including accompanist).</li>
+							<li class="">Judgment will be based on quality of singing, synchronization, co-ordination, actions of the team</li>
+							<li class="">Time limit: 4+1 minutes.</li>
+							<li class="">Western, Bollywood and Folk songs are allowed.</li>
+							<li class="">Only 1 instrument is allowed.</li>
+							<li class="">Instruments and distortion pedals will not be provided by the institute.</li>
+							<li class="">No chords (leads) will be provided; participants have to carry their own chords.</li>
+							<li class="">Marks would get deducted if the time limit exceeds and the number of performers exceeds.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-mockipl" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="mock-ipl">MOCK IPL AUCTION</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Ipl Auction.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="MOCK IPL AUCTION / DAY - 25th Feb / Timing : 12PM - 3PM / Venue : SEMINAR HALL">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Ipl Auction.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Dr. Vikas Bharara (IITM)</p>
+						<p class="lead">ii) Mr. Nishant (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Maximum four participants per team.</li>
+							<li class="">Maximum of 8 teams will be allowed for the auction.</li>
+							<li class="">Teams will be selected on first come first basis.</li>
+							<li class="">Theme: Moments of the fest (Fiesta).</li>
+							<li class="">Each team will be provided with some virtual money, which can be considered as the individual team budget. Teams will have to bid for players and buy them.</li>
+							<li class="">AT ANY MOMENT OF THE GAME, Teams crossing the stipulated budget stand to be disqualified.</li>
+							<li class="">Maximum of four overseas players are allowed in a team.</li>
+							<li class="font-weight-bold">Players are categorized. So by the end of the auction, the structure of the team should look like:</li>
+										<p class="text-left m-0 p-0">- 4-BATSMEN</p>
+										<p class="text-left m-0 p-0">- 3-BOWLERS</p>
+										<p class="text-left m-0 p-0">- 2-ALL-ROUNDER</p>
+										<p class="text-left m-0 p-0">- 1-WICKETKEEPER</p>
+										<p class="text-left m-0 p-0">- 1-PLAYER OF CHOICE OF ANY CATEGORY</p>
+							<li class="">Teams not satisfying the mandatory structure as above will also be disqualified.</li>
+							<li class=""> UNSOLD players to be put up for auction at TEAMS request or on demand.</li>
+							<li class="">THE PLAYERS LIST will be provided at the registration desk at the time of registration and the grades of players will be revealed only at the AUCTION TABLE.</li>
+							<li class=""> Teams are expected to maintain discipline and only members should go the bid strictly.</li>
+							<dl>
+							<li><dt class="font-weight-bold lead">Point Structure :- </dt></li>
+										<dd class="m-0 p-0 font-weight-bold text-left">- GRADE A - 15 POINTS</dd>
+										<dd class="m-0 p-0 font-weight-bold text-left">- GRADE B - 12 POINTS</dd>
+										<dd class="m-0 p-0 font-weight-bold text-left">- GRADE C - 8 POINTS</dd>
+							</dl>
+						</ul>
+						<ul class="text-left" style="list-style-type: circle;">
+							<p class="font-weight-bold lead text-center"> WINNER RULES :- </p>
+							<li class="text-success">The teams with maximum number of points wins.</li>
+							<li class="text-success">In case of a tie: The amount left for tied teams will be checked. The team with maximum amount of funds left will be the winning team.</li>
+							<li class="text-success">n case of same amount left the tied teams will have to nominate the best batsmen of the team and ODI statistics of the players will be checked head to head. The team with the better player wins.</li>
+							<li class="text-success">The winning team will be granted a cash price along with certificates.</li>
+							<li class="text-success">The runner up team will be granted certificates</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-justaminute" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="just-jam">JUST A MINUTE</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/JAMNEW-01.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="JAM / DAY - 25th Feb / Timing : 12.30PM ONWARDS / Venue : IITM ROOM NO. 103">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/JAMNEW-01.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Manika (IITM)</p>
+						<p class="lead">ii) Ms. Sushma (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">The total time is sixty seconds, inclusive of all the time that all the speakers in a given round are allowed to speak.</li>
+							<li class="">Points are given in the following manner :</li>
+								<p class="m-0 p-0 font-weight-bold text-left">a)-> Positive points for every second that you speak</p>
+								<p class="m-0 p-0 font-weight-bold text-left">b)-> Positive points for every correct objection</p>
+								<p class="m-0 p-0 font-weight-bold text-left">c)-> Negative points for every incorrect objection</p>
+								<p class="m-0 p-0 font-weight-bold text-left">d)-> Negative points for every incorrect objection</p>
+							<li class=""> You get a penalty if the competition objects on any of the following counts :</li>
+								<p class="m-0 p-0 font-weight-bold text-left">a)-> You object out of turn</p>
+								<p class="m-0 p-0 font-weight-bold text-left">b)-> You stutter, stammer, and generally indulge in “time-wasting tactics”. These include efforts to buy time like interspersing your talk with “uhh”, “aah” etc...</p>
+								<p class="m-0 p-0 font-weight-bold text-left">c)-> Early start and late start</p>
+								<p class="m-0 p-0 font-weight-bold text-left">d)-> Speaking too fast or too slow</p>
+								<p class="m-0 p-0 font-weight-bold text-left">e)-> Grammatical errors</p>
+								<p class="m-0 p-0 font-weight-bold text-left">f)->  Undue stress on words, undue emphasis in the sentences</p>
+								<p class="m-0 p-0 font-weight-bold text-left">g)-> Repetition of a previously used idea</p>
+								<p class="m-0 p-0 font-weight-bold text-left">h)->  Not following the “random rules” as set by the JAM master. For example, the most popular random rule was “Praise Guntas before objecting”. If you forget to do so or the JAM master thinks that the praise was not good enough, you will not be allowed to object and lose points for an incorrect/bad objection</p>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-murder-investigation" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="murder-invest">MURDER INVESTIGATION</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Murder Investigation.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="MURDER INVESTIGATION / DAY - 25th Feb / Timing : 11AM - 3.30PM / Venue : IITM n IINTM CAMPUS">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Murder Investigation.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Mr. Virender Dahiya (IITM)</p>
+						<p class="lead">ii) Dr. Mohita Mathur (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">It is an individual competition.</li>
+							<li class="">Participants are requested to bring their own digital camera or DSLR’s.
+							Photography done by mobile phone is not allowed.</li>
+							<li class="">Participants will be responsible for their camera. Institute will not take any
+							responsibility for the same.</li>
+							<li class="">Theme: Moments of the fest (Fiesta).</li>
+							<li class="">Participants have to cover each and every event on both the days of the fest.</li>
+							<li class="">Participants have to submit their best 50 photos in a CD (2 copies) on (SO-SO
+							DATE) at the reception of the institute.</li>
+							<li class="">Judgement will be done on the basis of originality, technical excellence and
+							the artistic merit.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-nukkad-natak" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="nukkad-n">NUKKAD NATAK</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Nukkad Natak.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="NUKKAD NATAK / DAY - 25th Feb / Timing : 10.30AM - 2.30PM / Venue : IITM n IINTM CAMPOUND">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Nukkad Natak.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Anamika (IITM)</p>
+						<p class="lead">ii) Ms. Manpreet (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Maximum number of participants per team: 22 (including accompanists/instrumentalists), minimum 10 participants.</li>
+							<li class="">Use of make-up, lights and mikes not allowed.</li>
+							<li class="">Time Limit: 20+2 minutes (including set up).</li>
+							<li class="">Props allowed (Lathi, Dry colours, placards, etc.). Use of any electronic gadget, fire, smoke machine, or any other bulky props not allowed.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-photography" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="photogr">PHOTOGRAPHY</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/PHOTO1-01.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="PHOTOGRAPHY / DAY - 25th Feb / Timing : FULL DAY / Venue : IITM">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/PHOTO1-01.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Mr. Ashish Nayyar (IITM)</p>
+						<p class="lead">ii) Mr. Ankit (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">It is an individual competition.</li>
+							<li class="">Participants are requested to bring their own digital camera or DSLR’s. Photography done by mobile phone is not allowed.</li>
+							<li class="">Participants will be responsible for their camera. Institute will not take any responsibility for the same.</li>
+							<li class="">Theme: Moments of the fest (Fiesta).</li>
+							<li class="">Participants have to cover each and every event on both the days of the fest.</li>
+							<li class="">Participants have to submit their best 50 photos in a CD (2 copies) on (SO-SO
+							DATE) at the reception of the institute.</li>
+							<li class="">Judgement will be done on the basis of originality, technical excellence and
+							the artistic merit.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-pictionary" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="pictionary">PICTIONARY</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Pictionary1.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="PICTIONARY / DAY - 25th Feb / Timing : 1.00AM - 2.30PM / Venue : IITM ROOM NO. 108">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Pictionary1.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Neha Gehlawat (IITM)</p>
+						<p class="lead">ii) Ms. Kanika Dhingra (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">A team will consist of 2-3 members.</li>
+							<li class="">One member will draw the sketch on board; the other members of the team have to guess.</li>
+							<li class="">The member who will be drawing the sketch is not supposed to communicate through words or actions. This will result in disqualification of the team.</li>
+							<li class="">There will be three rounds each round will elimination round.</li>
+							<p class="m-0 p-0 font-weight-bold lead">ROUND 1</p>
+							<li class="">The first round will be of 60 seconds, if the members are not able to guess then they will be eliminated.</li>
+							<li class="">In this round they have to guess the object.</li>
+							<p class="m-0 p-0 font-weight-bold lead">ROUND 2</p>
+							<li class="">The second round is of 90 seconds, if the member are not able to guess then they will be eliminated.</li>
+							<li class="">In this round they have to guess opposite words.</li>
+							<p class="m-0 p-0 font-weight-bold lead">ROUND 3</p>
+							<li class="">The third and the final round will be of 2 minutes.</li>
+							<li class="">In this round they have to guess the idioms or phrases.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-quiz" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="quiz">QUIZ</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/quiz-01.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="QUIZ / DAY - 25th Feb / Timing : 10AM ONWARDS / Venue : IINTM SEMINAR HALL ">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/quiz-01.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Ruby Dahiya (IITM)</p>
+						<p class="lead">ii) Ms. Kanika (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Only team entries are eligible.</li>
+							<li class="">A team shall consist of maximum two persons.</li>
+							<li class="">The participants are not allowed to use mobile phones or other electronic instruments.</li>
+							<li class="">Replacement of any other participant of a team is not allowed after registration.</li>
+							<li class="">There are four rounds in the quiz :- </li>
+							<p class="m-0 p-0 font-weight-bold lead">Round 1- Bolly Holly Quiz</p>
+							<p class="m-0 p-0 font-weight-bold lead">Round 2- Current Affairs</p>
+							<p class="m-0 p-0 font-weight-bold lead">Round 3- Logo Identification</p>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-rangoli" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="rangol">RANGOLI MAKING</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Rangoli Making.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="RANGOLI MAKING / DAY - 25th Feb / Timing : 11.00AM - 1.00PM / Venue : IINTM BASEMENT">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Rangoli Making.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Neha Jain (IITM)</p>
+						<p class="lead">ii) Ms. Madhu (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">All the participants should arrive at the venue at least 15 minutes before the event starts.</li>
+							<li class="">Each participant is given 2 hrs of time. Should start and finish on time. No extra time will be given.</li>
+							<li class="">Participant has to bring her own material (Color sand/glue/markers/pencils/stencils/plastic flowers any other decorative material).</li>
+							<p class="m-0 p-0 font-weight-bold lead">******Permanent markers are not allowed*********</p>
+							<li class="">Judges decision is final no other arguments are entertained</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-rat-games" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="rat">RAT GAMES</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Rat Games.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="RAT GAMES / DAY - 25th Feb / Timing : 10.30AM ONWARDS / Venue : IINTM BACKSIDE">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Rat Games.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Renu Rai (IITM)</p>
+						<p class="lead">ii) Ms. Suruchi (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						
+							<p class="m-0 p-0 font-weight-bold lead">There will be 4 games:-</p>
+								<ul class="">
+									<li class="">Paper Toss :-</li>
+										<ol type="a">
+											<li class="">A team will consist of only 2 members.</li>
+											<li class="">One player will be blind folded and will throw paper balls and other member has to catch these balls using a bucket.</li>
+											<li class="">The team which will have maximum number of balls after 1 minute will be the winner.</li>
+										</ol>
+									<li class="">Guide Me :-</li>
+										<ol type="a">
+											<li class="">A team will consist of only 2 members.</li>
+											<li class="">One team member will be blind folded, who will be guided by the other team member through obstacle course.</li>
+											<li class="">If the blind folded member touches any obstacle, then the team will be disqualified.</li>
+										</ol>
+									<li class="">Moving Up :-</li>
+										<ol type="a">
+											<li class="">It’s an individual game.</li>
+											<li class="">To play it, 39 cups are stacked with one black cup at the bottom, and players race the clock to cycle the black cup through the stack.</li>
+											<li class="">The player to finish the cycle first, wins.</li>
+										</ol>
+									<li class="">Make It Fall :-</li>
+										<ol type="a">
+											<li class="">It’s an individual game.</li>
+											<li class="">Some cups will be placed on a table.</li>
+											<li class="">All you need to do is inflate a balloon and use the air to push cups off of a table.</li>
+											<li class="">If any player uses hands to make the cups fall, the player will be disqualified.</li>
+											<li class="">The player to finish first, wins.</li>
+										</ol>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-solo-dance" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="solo-dance">SOLO DANCE</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Solo Dance.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="SOLO DANCE / DAY - 25th Feb / Timing : 11.30AM - 12.30PM / Venue : IITM AUDI">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Solo Dance.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Renu Choudhary (IITM)</p>
+						<p class="lead">ii) Ms. Sonal (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Number of participant is 1.</li>
+							<li class="">Time limit: 3+1</li>
+							<li class="">Judgment will be based on expressions, moves, synchronization, makeup, overall effects.</li>
+							<li class="">Props are allowed, but will not be provided by the institute.</li>
+							<li class="">Marks would get deducted if the time limit exceeds and the number of performers exceeds.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid white;" id="event-solo-singing" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="solo-sing">SOLO SINGING</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/SOLO SINGING.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="SOLO SINGING / DAY - 25th Feb / Timing : 9AM - 10AM / Venue : IITM AUDI">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/SOLO SINGING.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Shilpa Taneja (IITM)</p>
+						<p class="lead">ii) Ms. Neeti Chopra (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Number of participant is 1.</li>
+							<li class="">1 accompanist is allowed & only 1 instrument is allowed(with the accompanist or with the performer).</li>
+							<li class="">If the performer is playing the instrument by himself, then there shall be no accompanist.</li>
+							<li class="">Time limit: 3+1 minutes</li>
+							<li class="">Judgment will be based on general qualities like rhythm, synchronization, and general impression, etc..</li>
+							<li class="">Western, Bollywood & folks songs are allowed.</li>
+							<li class="">No distortion pedals will be provided..</li>
+							<li class="">No chords (leads) will be provided.</li>
+							<li class="">Marks would get deducted if the time limit exceeds and the number of performers exceeds.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid black;" id="event-street-dance" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="street-dance">STREET DANCE</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/Street Dance.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="STREET DANCE / DAY - 25th Feb / Timing : 3PM ONWARDS / Venue : IITM ATTRIUM">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/Street Dance.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Asha Chauhan (IITM)</p>
+						<p class="lead">ii) Dr. Priyanka (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">There can be 5-10 members in a team.</li>
+							<li class="">One entry per college..</li>
+							<li class="">Time limit is 6+2 minutes.</li>
+							<li class="">Participants should carry two CDs to avoid technical problems; one shall be submitted to the event coordinator prior to the event.</li>
+							<li class="">No props allowed.</li>
+							<li class="">Lighting of candles, match sticks and cigarette are strictly not allowed.</li>
+							<li class="">Participants will be judged on their costumes, formations, coordination, energyand overall performance.</li>
+							<li class="">Negative marking for exceeding time limit and members.</li>
+							<li class="">Music should not contain abusive or emotive work.</li>
+							<li class="">If dancers perform any dangerous stunts/moves they are responsible for their injuries.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid black;" id="event-cooking" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="text-event-cooking">COOKING WITHOUT FIRE</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/COOKING.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="COOKING WITHOUT FIRE / DAY - 25th Feb / Timing : 11AM - 1PM / Venue : IINTM ROOM NO. 411 412 413">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/COOKING.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Nidhi Srivastava (IITM)</p>
+						<p class="lead">ii) Dr. Rashmi (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Maximum 2 participants in a team.</li>
+							<li class="">Team should have a unique name of the dish.</li>
+							<li class="">Participants have to bring their own material.</li>
+							<li class="">All material should be raw.</li>
+							<li class="">Dishes should be purely vegetarian.</li>
+							<li class="">Preparation and presentation time is 1 hour.</li>
+							<li class="">Procedure of cooking should be explained during judgment.</li>
+							<li class="">Judgment should be based on innovation, presentation, taste and cleanliness of the area.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid black;" id="event-mono" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="text-mono">MONO ACTING</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/mono.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="MONO ACTING / DAY - 25th Feb / Timing : 10AM - 12Noon / Venue : IINTM ROOM NO. 113">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/mono.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Bhavna Tyagi (IITM)</p>
+						<p class="lead">ii) Ms. Akanksha (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="">Individual participation.</li>
+							<li class="">Time limit: 4 + 1 minutes.</li>
+							<li class="">Judgment will be based on qualities like idea, creativity of presentation, use of makeup, music and general impressions.</li>
+							<li class="">Negative marking will be done if time limit exceeds.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid contentContainer" style="border-bottom: 5px solid black;" id="event-mrmrs-fiesta" style="">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="font-shadow font-passero enjoy-css pt-4" id="text-mrmrs">MR & MISS FIESTA</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 text-center mt-3">
+				<a href="Events_Poster/New/mr_ms-fiesta.jpg" class="fancy-anchor" data-fancybox="event-images" data-caption="MR & MISS FIESTA / DAY - 25th and 26th FEB / Timing : 2PM ONWARDS / Venue : IITM AUDI">
+						<img class="img-fluid event-page-image hvr-bob" src="Events_Poster/New/mr_ms-fiesta.jpg">
+				</a>
+				<div class="p-5">
+						<a role="button" aria-pressed="true" href="registerfiesta.html" target="_blank" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg">REGISTER YOURSELF!</a>
+				</div>
+			</div>
+			<div class="col-sm-7 text-left" style="padding:0;">
+				<div class="row m-3">
+					<div class="col-sm-12 text-center custom-card hvr-bob">
+						<h3 class="font-baloo">Faculty Coordinators:</h3>
+						<p class="lead">i) Ms. Tripti Lamba (IITM)</p>
+						<p class="lead">ii) Dr. Renu Sharma (IINTM)</p>
+					</div>	
+				</div>
+				<div class="row m-3">
+					<div class="col-sm-12 custom-card hvr-bob">
+						<ul class="">
+							<li class="font-weight-bold">There will be 3 rounds, which are as follows:-	</li>
+							<ul type="circle">
+								<li class="lead">Introduction</li>
+								<ol type="A">
+									<li class="">Time allotted: 2 minutes.</li>
+									<li class="">It can be as creative as you imagine. Emotional, funny, artistic, dramatic, simple – whatever you are comfortable with.</li>
+								</ol>
+							</ul>
+							<ul type="circle">
+								<li class="lead">Talent Round</li>
+								<ol type="A">
+									<li class="">Time allotted: 3-4 minutes.</li>
+									<li class="">Participants need to inform beforehand what all support will they need on stage.</li>
+								</ol>
+							</ul>
+							<ul type="circle">
+								<li class="lead">Personality Contest</li>
+								<ol type="A">
+									<li class="">This would be a questionnaire round.</li>
+									<li class="">Participants are supposed to give sensible and smart answers.</li>
+								</ol>
+							</ul>
+							<li class="">The selection will be done by eminent personalities in the field of art and culture.</li>
+							<li class="">Judgment will be done on the basis of participant’s personality, intelligence, versatility and the vocal delivery.</li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid p-2" id="footerdiv" style="background-color: #f1f2f6; box-shadow: none;">
+		<div class="row mt-5">
+			<div class="col-sm-4 text-center p-2" style="border-right: 1px solid #23272B;">
+				<div class="text-center">
+					<img class="img-fluid footer-logo custom-card" src="images/logo.png">
+				</div>
+				<div class="p-3 mt-4">
+					<h1 class="font-shadow font-loveyasis font-weight-bold">GROUP OF INSTITUTIONS</h1>
+					<p class="lead font-shadow font-loveyasis font-weight-bold">© IITM 2018 | DESIGNED BY IITM | SR</p>
+				</div>
+			</div>
+
+			<div class="col-sm-4 text-center p-2" style="border-right: 1px solid #23272B;">
+				
+				<button type="button" class="btn btn-dark hvr-float-shadow font-weight-bold btn-lg btn-gradient">FIND US</button><p></p>
+
+				<div class="btn-group-vertical btn-group-lg" id="icons">
+					<button type="button" class="btn btn-warning"><a href="https://twitter.com/iitm_ipu" target="_blank"><i class="fab fa-twitter-square fa-2x twitter" aria-hidden="true"></i></a></button>
+					<button type="button" class="btn btn-warning"><a href="https://www.facebook.com/iitmfiesta/" target="_blank"><i class="fab fa-facebook-square fa-2x facebook" aria-hidden="true"></i></a></button>
+					<button type="button" class="btn btn-warning"><a href="https://www.instagram.com/iitm_fiesta/" target="_blank"><i class="fab fa-instagram fa-2x instagram" aria-hidden="true"></i></a></button>
+					<button type="button" class="btn btn-warning"><a href="https://www.youtube.com/channel/UCRfsFwiKcTStwUIf2vISxCw" target="_blank"><i class="fab fa-youtube fa-2x youtube" aria-hidden="true"></i></a></button>
+				</div>
+				<div class="btn-group-vertical btn-group-lg" id="social-text">
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 10px 16px; margin: 0px;"><a href="https://twitter.com/iitm_ipu" target="_blank" class="text-twitter s-t">Connect on Twitter</a></h5></button>
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 9px 16px; margin: 0px;"><a href="https://www.facebook.com/iitmfiesta/" target="_blank" class="text-facebook s-t">Connect on facebook</a></h5></button>
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 9px 16px; margin: 0px;"><a href="https://www.instagram.com/iitm_fiesta/" target="_blank" class="text-insta s-t">Connect on Instagram</a></h5></button>
+					<button type="button" class="btn btn-warning"><h5 class="font-baloo" style="padding: 10px 16px; margin: 0px;"><a href="https://www.youtube.com/channel/UCRfsFwiKcTStwUIf2vISxCw" target="_blank" class="text-youtube s-t">Connect on Youtube</a></h5></button>
+				</div>
+			</div>
+			<div class="col-sm-4 text-center p-2">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.63560302968!2d77.09981131446574!3d28.61070669182058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b5567911807%3A0x996e86fe24144daf!2sIITM+Janakpuri+%7C+Institute+of+Information+Technology+%26+Management!5e0!3m2!1sen!2sin!4v1515425836170" frameborder="0" id="maploca" class="border border-dark rounded img-fluid" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap4/js/popper.min.js"></script>
+<script src="bootstrap4/js/bootstrap.min.js"></script>
+<script src="bootstrap4/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="custom-assets/js/gradient-color.js"></script>
+<script src="custom-assets/js/animated_bg.js"></script>
+<script src="custom-assets/js/css3-animate-it.js"></script>
+<script src="custom-assets/js/vegas.min.js"></script>
+<script src="custom-assets/js/jquery.fancybox.min.js"></script>
+<script src="custom-assets/js/jquery.vide.min.js"></script>
+
+<script type="text/javascript">//Fancybox images-------------
+	$('[data-fancybox="event-images"]').fancybox({
+		  buttons : [
+		    'zoom',
+		    'fullScreen',
+		    'close'
+		  ],
+		  arrows : true,
+		  transitionEffect : "tube"
+		});
+</script>
+<script type="text/javascript">//Top anchor button-----------
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+	        document.getElementById("topBtn").style.display = "block";
+	    } else {
+	        document.getElementById("topBtn").style.display = "none";
+	    }
+	    addBorderAtNavbar();
+	}
+
+	function addBorderAtNavbar(){
+		if (document.body.scrollTop > 280 || document.documentElement.scrollTop > 280 )
+		{
+			document.getElementById("head").style.borderBottom = "5px solid white";
+		}
+		else
+		{
+			document.getElementById("head").style.borderBottom = "none";	
+		}
+	}
+
+	function topFunction() {
+	    document.body.scrollTop = 0; // For Safari
+	    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+</script>
+<script type="text/javascript">//Height Of container----------
+	var windowheight=$(window).height();
+
+	var headheight=$('#head').height();
+
+	var footheight=$('#foot').height();
+	
+	var midheight=windowheight-(headheight);
+	
+	$('.contentContainer').css("min-height",midheight+"px");
+</script>
+
+</body>
+</html>
